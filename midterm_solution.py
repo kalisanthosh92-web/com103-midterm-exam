@@ -65,3 +65,27 @@ for j in range(1,5):
 
         if KDA > best_played:
             best_played = KDA
+
+
+print()
+print('=' * 50)
+print(f"{str(IGN) + ' -- MATCH LOG (' + str(Rank) + ')':^50}")
+print('='*50)
+for i in range(len(matches)):
+    #print('['+ str(matches[i][0])+']',matches[i][1]+'\t\t|',str(matches[i][2])+'\t |',matches[i][3]+'\t |',matches[i][4])
+    print(f'[{matches[i][0]}] {matches[i][1]:<10}| KDA: {matches[i][2]:.2f}\t | {matches[i][3]}\t | {matches[i][4]}')
+
+print('-'*50)
+
+print('Matches Played : ',matches_played)
+print(f'Wins : {wins}   |  Losses : {loss}')
+win_rate = ((wins/matches_played)*100)
+print(f'Win Rate : {win_rate:.0f}%')
+
+
+for i in matches:
+    if  i[2] == best_played:
+        print(f'Best Match\t: [{i[0]}] {i[1]}\t (KDA:{i[2]:.2f})')
+ 
+
+print('=' * 50)
